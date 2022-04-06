@@ -221,14 +221,15 @@ def main(task='pp',
 
     #print("++++++++++++++++++++++")
     #print(get_device())
-    data_num_list = [24995, 1305, 313, 1476, 598, 99, 434, 107, 185, 123, 116]
-    loss_weight = torch.FloatTensor(data_num_list)
-    loss_weight = 1.0 / loss_weight
-    loss_weight = loss_weight / loss_weight.sum()
-    loss_weight = loss_weight.to(get_device())
+	
+    #data_num_list = [24995, 1305, 313, 1476, 598, 99, 434, 107, 185, 123, 116]
+    #loss_weight = torch.FloatTensor(data_num_list)
+    #loss_weight = 1.0 / loss_weight
+    #loss_weight = loss_weight / loss_weight.sum()
+    #loss_weight = loss_weight.to(get_device())
 
-    criterion = nn.CrossEntropyLoss(loss_weight)
-    #criterion = nn.CrossEntropyLoss()
+    #criterion = nn.CrossEntropyLoss(loss_weight)
+    criterion = nn.CrossEntropyLoss()
 
     trainer = train.Trainer(cfg,
                             model,
